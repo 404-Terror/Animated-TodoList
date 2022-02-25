@@ -1,6 +1,7 @@
 import React from 'react'
 import './NoTodo.css'
 import { motion } from 'framer-motion'
+import noitem from '../noitem.png'
 
 
 const boxVariable = {
@@ -34,7 +35,7 @@ const Variable = {
 const NoTodoItem = () => {
     return (
         <div className="images">
-            <motion.img className="error" variants={boxVariable} initial="hidden" animate="final" src={require('D:/webd/todo/src/noitem.png')} alt="warning" />
+            <motion.img className="error" variants={boxVariable} initial="hidden" animate="final" src={noitem} alt="warning" />
             <motion.h1 className="no-items" variants={Variable}
                 initial="hidden" animate="final">
                 ❌ No Items Found</motion.h1>
