@@ -6,6 +6,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { Link } from 'react-router-dom'
+import logo from './image.png'
 
 
 const spanVariants = {
@@ -111,7 +112,7 @@ const Startingpage = () => {
                         }}>Get Started!!</Button>
                     </Link>
                 </Col>
-                <Col><motion.img className="im" src={require('D:/webd/todo/src/to-do-list.png')}
+                <Col><motion.img className="im" src={logo}
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1, rotate: 370, transition: { delay: 0.5, duration: 0.5 } }}
                     alt="to-do" /></Col>
