@@ -1,9 +1,8 @@
 .error {
-  width: 10%;
+  width: 300px;
+  margin: 2% 0;
 }
-.box {
-  width: 25%;
-}
+
 .images {
   display: flex;
   flex-direction: column;
@@ -13,11 +12,4 @@
   font-family: "Barriecito", cursive;
   font-size: 1.7rem;
   font-weight: bold;
-}
-.changing {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 2%;
-  margin-top: 5%;
 }

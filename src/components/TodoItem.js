@@ -1,12 +1,27 @@
 import React, { useState, useEffect } from 'react'
 import './TodoItem.css'
 import Checkbox from '@mui/material/Checkbox';
+import { motion } from 'framer-motion'
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { useDispatch } from 'react-redux';
 import { deleteTodo, updateTodo } from '../slices/TodoSlice'
 import { toast } from 'react-hot-toast'
 import Modal from './Modal'
+
+const child = {
+    hidden: {
+        y: -120,
+        opacity: 0,
+    },
+    final: {
+        y: 0, opacity: 1,
+    },
+    exit: {
+        y: -50,
+        opacity: 0,
+    }
+}
 
 const TodoItem = ({ todo }) => {
     const [updateModal, setupdateModal] = useState(false);
@@ -34,7 +49,7 @@ const TodoItem = ({ todo }) => {
     }
     return (
         <>
-            <div className="item">
+            <motion.div variants={child} initial="hidden" animate="final" exit="exit" className="item">
                 <div className="todoDetails">
                     <Checkbox color="success" size="large" checked={checked} onChange={handlechecked} />
                     <div className="texts">
@@ -46,7 +61,7 @@ const TodoItem = ({ todo }) => {
                         <div className="icon"><EditIcon onClick={handleupdate} onKeyDown={handleupdate} /></div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
             <Modal type="Update" todo={todo} modalOpen={updateModal} setModalOpen={setupdateModal} />
         </>
     )

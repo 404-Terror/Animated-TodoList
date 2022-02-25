@@ -1,12 +1,27 @@
 import React, { useState } from 'react'
 import './TodoPage.css'
 import Button from '@mui/material/Button'
+import { AnimatePresence, motion } from 'framer-motion'
 import Selected from './Select'
 import Modal from './Modal'
 import { Toaster } from 'react-hot-toast'
 import { useSelector } from 'react-redux'
 import TodoItem from './TodoItem'
 import NoTodoItem from './NoTodoItem'
+
+const parent = {
+    hidden: {
+        opacity: 0,
+    },
+    final: {
+        opacity: 1,
+        scale: 1,
+        transition: {
+            when: 'beforeChildren',
+            staggerChildren: 0.3,
+        }
+    },
+}
 
 const TodoPage = () => {
     const [modalOpen, setModalOpen] = useState(false);
@@ -25,9 +40,9 @@ const TodoPage = () => {
             <header><span className="T">T</span>odo List</header>
             <span className="todo-span"><Button sx={{ width: '120px', backgroundColor: '#573391', '&:hover': { backgroundColor: '#8A39E1' } }} variant="contained" onClick={() => setModalOpen(true)}>Add Task</Button><Selected />
                 <Modal type="Add" modalOpen={modalOpen} setModalOpen={setModalOpen}></Modal></span>
-            <div className="todo-body">
-                {filteredTodoList && filteredTodoList.length > 0 ? filteredTodoList.map((todo) => <TodoItem key={todo.id} todo={todo} />) : <NoTodoItem />}
-            </div>
+            <motion.div variants={parent} initial="hidden" animate="final" className="todo-body">
+                <AnimatePresence>{filteredTodoList && filteredTodoList.length > 0 ? filteredTodoList.map((todo) => <TodoItem key={todo.id} todo={todo} />) : <NoTodoItem />}</AnimatePresence>
+            </motion.div>
             <Toaster position='bottom-right'
                 toastOptions={{
                     style: {

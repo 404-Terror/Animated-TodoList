@@ -1,11 +1,34 @@
 import React, { useState, useEffect } from 'react'
 import './Modal.css'
+import { AnimatePresence, motion } from 'framer-motion'
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import Button from '@mui/material/Button'
 import { useDispatch } from 'react-redux'
 import { addTodo, updateTodo } from '../slices/TodoSlice'
 import { v4 as uuid } from 'uuid'
 import toast from 'react-hot-toast'
+
+const drop = {
+    hidden: {
+        opacity: 0,
+        transform: 'scale(0.9)',
+
+    },
+    final: {
+        transform: 'scale(1)',
+        opacity: 1,
+        transition: {
+            duration: 0.1,
+            type: "spring",
+            damping: 25,
+            stiffness: 500
+        }
+    },
+    exit: {
+        transform: 'scale(0)',
+        opacity: 0,
+    }
+}
 
 const Modal = ({ type, modalOpen, setModalOpen, todo }) => {
     const [Title, setTitle] = useState('');
@@ -55,17 +78,20 @@ const Modal = ({ type, modalOpen, setModalOpen, todo }) => {
 
     }
     return (
-        <>
+        <AnimatePresence>
             {modalOpen && (
-                <div className="wrapper">
-                    <div className="modalwrapper">
-                        <div className="closeButton"
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="wrapper">
+                    <motion.div variants={drop} initial="hidden" animate="final" exit="exit" className="modalwrapper">
+                        <motion.div className="closeButton"
                             onClick={() => setModalOpen(false)}
                             onKeyDown={() => setModalOpen(false)}
                             tabIndex={0}
                             role="button"
+                            initial={{ top: 40, opacity: 0 }}
+                            animate={{ top: -10, opacity: 1 }}
+
                         ><CloseOutlinedIcon />
-                        </div>
+                        </motion.div>
                         <form className="form" onSubmit={handlesubmit}>
                             <h1 className="formTitle">{type === 'Add' ? 'Add' : "Update"} Task</h1>
                             <label htmlFor="title">Title
@@ -86,10 +112,10 @@ const Modal = ({ type, modalOpen, setModalOpen, todo }) => {
                                     color="error" size="medium" type="button" variant="outlined">Cancel</Button>
                             </div>
                         </form>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             )}
-        </>
+        </AnimatePresence>
     );
 
 }
