@@ -1,0 +1,17 @@
+h1 {
+  color: #fff;
+  font-size: 9rem;
+  font-weight: bold;
+  letter-spacing:2px;
+  margin: 5px auto;
+  padding: 5px;
+  font-family:'Open Sans', sans-serif; 
+}
+
+span {
+  display: inline-block;
+  cursor: pointer;
+}
+.todo-letters {
+ padding-left:17px;
+}

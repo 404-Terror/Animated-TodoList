@@ -1,0 +1,9 @@
+#selected {
+  display: flex;
+  width: auto;
+  font: black;
+  background: #eee;
+  height: fit-content;
+  padding: 7px;
+  margin: 0;
+}

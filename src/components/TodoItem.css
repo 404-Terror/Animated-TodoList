@@ -1,0 +1,67 @@
+.item {
+  padding: 0.8rem;
+  background: #d2d4dc;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  height: fit-content;
+}
+
+.todoDetails {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  background: #fffdfd;
+  border-radius: 4px;
+  padding: 9px 16px 9px 0;
+}
+.texts {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.--completed {
+  text-decoration: line-through;
+  opacity: 0.7;
+  word-break: break-all;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: black;
+}
+.incomplete {
+  opacity: 1;
+  word-break: break-all;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: black;
+}
+.time {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: -1rem;
+  color: black;
+  margin-bottom: 0;
+}
+.todoActions {
+  margin: 0 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.icon {
+  font-size: 2rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  background-color: #efefef;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s ease background-color;
+}
+.icon:hover {
+  background-color: #d2d4dc;
+}

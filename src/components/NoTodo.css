@@ -1,0 +1,23 @@
+.error {
+  width: 10%;
+}
+.box {
+  width: 25%;
+}
+.images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.no-items {
+  font-family: "Barriecito", cursive;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+.changing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2%;
+  margin-top: 5%;
+}
