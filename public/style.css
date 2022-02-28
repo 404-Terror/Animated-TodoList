@@ -1,10 +1,11 @@
-.trail { /* className for the trail elements */
-    position: absolute;
-    height: 4px; 
-    width: 4px;
-    border-radius: 50%;
-    background: rgb(221, 17, 119);
-    z-index: -3;
-    cursor: none;
-    transform: translate(0%,100%);
-  }
+.trail {
+  /* className for the trail elements */
+  position: absolute;
+  height: 4px;
+  width: 4px;
+  border-radius: 50%;
+  background: rgb(221, 17, 170);
+  z-index: -3;
+  cursor: none;
+  transform: translate(0%, 100%);
+}

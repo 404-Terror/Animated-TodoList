@@ -60,7 +60,7 @@ const Startingpage = () => {
 
         <Container>
             <Row>
-                <Col style={{ justifyContent: 'center' }}>
+                <Col>
                     <div>
                         {text1.split("").map((Letter, id) => {
                             if (Letter === "T")
@@ -83,7 +83,6 @@ const Startingpage = () => {
                     </div>
                     <Link to="/todo" style={{ textDecoration: 'none' }}><Button
                         variant="outlined"
-                        size="large"
                         sx={{
                             width: 335,
                             height: 60,
@@ -100,7 +99,7 @@ const Startingpage = () => {
                                 transform: 'scale(1.2)',
                                 color: 'black',
 
-                            }
+                            },
                         }}
                         component={motion.div}
                         initial={{ opacity: 0 }}

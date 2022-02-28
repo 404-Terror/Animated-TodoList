@@ -2,10 +2,13 @@ h1 {
   color: #fff;
   font-size: 9rem;
   font-weight: bold;
-  letter-spacing:2px;
+  letter-spacing: 2px;
   margin: 5px auto;
   padding: 5px;
-  font-family:'Open Sans', sans-serif; 
+  font-family: "Open Sans", sans-serif;
+}
+.col {
+  margin-top: 20px;
 }
 
 span {
@@ -13,5 +16,43 @@ span {
   cursor: pointer;
 }
 .todo-letters {
- padding-left:17px;
+  padding-left: 17px;
+}
+@media screen and (min-width: 921px) and (max-width: 1200px) {
+  h1 {
+    font-size: 5rem;
+  }
+  .css-bxlghu-MuiButtonBase-root-MuiButton-root {
+    max-width: 230px;
+  }
+  .im {
+    width: 350px;
+  }
+  .col {
+    margin-top: 60px;
+  }
+}
+
+@media screen and (min-width: 100px) and (max-width: 323px) {
+  h1 {
+    font-size: 3rem;
+  }
+  .css-bxlghu-MuiButtonBase-root-MuiButton-root {
+    max-width: 200px;
+  }
+  .im {
+    width: 150px;
+  }
+}
+
+@media screen and (min-width: 324px) and (max-width: 920px) {
+  h1 {
+    font-size: 4rem;
+  }
+  .css-bxlghu-MuiButtonBase-root-MuiButton-root {
+    max-width: 220px;
+  }
+  .im {
+    width: 240px;
+  }
 }
